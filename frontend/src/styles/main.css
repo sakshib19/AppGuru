@@ -1,0 +1,48 @@
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  margin: 0;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+  padding: 30px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar {
+  background: #0066ff;
+  padding: 15px;
+}
+
+.navbar a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.mock-screen {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
