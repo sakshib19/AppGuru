@@ -10,7 +10,7 @@ It is specially designed for:
 
 🌍 Regional language learners
 
-The application uses a 100% free local AI model (Llama 3.2 via Ollama) — no API keys, no billing.
+The application uses a 100% free local AI model (Llama 3.2 via Ollama)
 
 🌟 Key Features
 
@@ -27,7 +27,7 @@ The application uses a 100% free local AI model (Llama 3.2 via Ollama) — no AP
 
 
 🏗️ Tech Stack
-Frontend
+**Frontend**
 
 React (Vite)
 
@@ -39,7 +39,7 @@ React Router
 
 CSS
 
-Backend
+**Backend**
 
 FastAPI
 
@@ -47,13 +47,13 @@ Python
 
 Uvicorn
 
-AI / ML
+**AI / ML**
 
 Ollama (Local LLM Runtime)
 
 Llama 3.2 Model
 
-🧪 How It Works
+**🧪 How It Works**
 
 User enters App Name and Preferred Language
 
@@ -67,7 +67,7 @@ Tutorial is displayed to the user
 
 User can practice using simulation mode
 
-🚀 Future Enhancements
+**🚀 Future Enhancements**
 
 🎙️ Speech-to-Text Input
 
@@ -84,3 +84,4 @@ User can practice using simulation mode
 Sakshi Bihani
 Electronics & Instrumentation Engineering
 NIT Rourkela
+
