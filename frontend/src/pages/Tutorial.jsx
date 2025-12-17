@@ -3,13 +3,8 @@ import axios from "axios";
 
 export default function Tutorial() {
   const [tutorial, setTutorial] = useState("");
-
-  function speak(text) {
-    const msg = new SpeechSynthesisUtterance();
-    msg.text = text;
-    msg.lang = "en-IN"; 
-    window.speechSynthesis.speak(msg);
-  }
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const appName = localStorage.getItem("app_name");
@@ -20,18 +15,32 @@ export default function Tutorial() {
         app_name: appName,
         language: language,
       })
-      .then((res) => setTutorial(res.data.tutorial));
+      .then((res) => {
+        setTutorial(res.data.tutorial);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setError("Backend not responding. Is server running?");
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return <h2 style={{ textAlign: "center" }}>⏳ Generating tutorial...</h2>;
+  }
+
+  if (error) {
+    return <h2 style={{ color: "red", textAlign: "center" }}>{error}</h2>;
+  }
 
   return (
     <div className="container">
-      <h2>Your Step-by-Step Tutorial</h2>
+      <h2>📘 Step-by-Step Tutorial</h2>
 
-      <button onClick={() => speak(tutorial)}>🔊 Listen</button>
+      <pre style={{ whiteSpace: "pre-wrap" }}>{tutorial}</pre>
 
-      <pre className="tutorial-box">{tutorial}</pre>
-
-      <button onClick={() => (window.location.href = "/simulation")}>
+      <button onClick={() => window.location.href = "/simulation"}>
         Practice Now →
       </button>
     </div>
